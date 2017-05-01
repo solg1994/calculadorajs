@@ -1,0 +1,35 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Ejemplo *muy* simple de calculadora</title>
+  <script src="https://code.jquery.com/jquery-2.2.3.js"></script>
+  <script src="calculadora.js"></script>
+  <!--<script src="calculadora_jquery.js"></script> -->
+  <style>
+
+  </style>
+</head>
+
+
+<body>
+<form id="myForm">
+  <p>Op 1: <input type="text" id="op1" onChange="validarSiNumero(this.value);"/></p>
+  <p>Op 2: <input type="text" id="op2" onChange="validarSiNumero(this.value);"/></p>
+
+  <input class="operador" type="button" type = "number"  id="suma" value=" + " onclick="calcula('+')"  />
+  <input class="operador" type="button" type = "number"  id="resta" value=" - " onclick="calcula('-')" />
+  <input class="operador" type="button"  id="multiplicacion" value=" x " onclick="calcula('*')" />
+  <input class="operador" type="button"  id="division" value=" : " onclick="return validacion()" />
+  <p>Resultado: <span id="resultado" ></span></p>
+  <input type="reset" value="reset" onsubmit="borrar()" />
+</form>
+
+<script>
+if (document.getElementById("resultado")> 0){
+  document.getElementById("resultado").style.color = "red";
+}else{document.getElementById("resultado").style.color = "green";
+}
+</script>
+
+</body>
+</html>
